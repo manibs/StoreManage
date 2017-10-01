@@ -32,7 +32,7 @@ app.use(function (req, res, next) {
 });
 
 //Setting up a server
-var server = app.listen(process.env.PORT || 8999, function () {
+var server = app.listen(process.env.PORT || 5000, function () {
     var port = server.address().port;
     console.log("App is running on port", port);
 });
