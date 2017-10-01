@@ -6,7 +6,9 @@ var bodyparser = require('body-parser');
 // Body parser middleware
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
-var db = mongoose.connect('mongodb://admin:admin@cluster0-shard-00-00-3tc1a.mongodb.net:27017,cluster0-shard-00-01-3tc1a.mongodb.net:27017,cluster0-shard-00-02-3tc1a.mongodb.net:27017/medicineAPI?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
+//var db = mongoose.connect('mongodb://admin:admin@cluster0-shard-00-00-3tc1a.mongodb.net:27017,cluster0-shard-00-01-3tc1a.mongodb.net:27017,cluster0-shard-00-02-3tc1a.mongodb.net:27017/medicineAPI?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
+
+app.set('port', (process.env.PORT || 5000));
 
 app.get('/index.html', function (req, res) {
    res.sendFile( __dirname + "/Pages/" + "index.html" );
@@ -32,7 +34,7 @@ app.use(function (req, res, next) {
 });
 
 //Setting up a server
-var server = app.listen(process.env.PORT || 5000, function () {
+var server = app.listen(app.get('port'), function () {
     var port = server.address().port;
     console.log("App is running on port", port);
 });
