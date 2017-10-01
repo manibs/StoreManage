@@ -10,12 +10,16 @@ app.use(bodyparser.json());
 
 app.set('port', (process.env.PORT || 5000));
 
+var mountpath = process.env.PARSE_MOUNT || './';
+
 app.get('/index.html', function (req, res) {
    res.sendFile( __dirname + "/Pages/" + "index.html" );
 })
 
-var Products = require(__dirname+'/models/productModel');
-var productRouter = require(__dirname+'/Services/products')(Products);
+
+
+var Products = require(mountpath + 'models/productModel');
+var productRouter = require( mountpath + 'Services/products')(Products);
 app.use('/api', productRouter);
 
 
