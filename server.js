@@ -14,8 +14,8 @@ app.get('/index.html', function (req, res) {
    res.sendFile( __dirname + "/Pages/" + "index.html" );
 })
 
-var Products = require('./models/productModel');
-var productRouter = require('./Services/products')(Products);
+var Products = require(__dirname+'/models/productModel');
+var productRouter = require(__dirname+'/Services/products')(Products);
 app.use('/api', productRouter);
 
 
