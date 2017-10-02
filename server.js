@@ -17,12 +17,12 @@ app.get('/index.html', function (req, res) {
 })
 
 
-var Products = require( app.get('src') + '/models/productModel');
+var Products = require( app.get('src') + '/Models/productModel');
 var productRouter = require( __dirname + '/Services/products')(Products);
 app.use('/api', productRouter);
 
 
-var Orders = require('./models/orderModel');
+var Orders = require('./Models/orderModel');
 var orderRouter = require('./Services/orders')(Orders);
 app.use('/api', orderRouter);
 
