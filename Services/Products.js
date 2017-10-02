@@ -11,7 +11,6 @@ var routes = function (Product) {
         })
         .get(function (req, res) {
             var query = {};
-
             if (req.query.category) {
                 query.category = req.query.category;
             }
