@@ -10,7 +10,7 @@ app.use(bodyparser.json());
 
 app.set('port', (process.env.PORT || 5000));
 
-app.set('src', (process.env.PARSE_MOUNT || '/'));
+app.set('src', (process.env.PARSE_MOUNT || './'));
 
 app.get('/index.html', function (req, res) {
    res.sendFile( __dirname + "/Pages/" + "index.html" );
@@ -18,7 +18,7 @@ app.get('/index.html', function (req, res) {
 
 
 var Products = require( app.get('src') + 'Models/productModel');
-var productRouter = require( __dirname + 'Services/products')(Products);
+var productRouter = require( app.get('src')  + 'Services/products')(Products);
 app.use('/api', productRouter);
 
 
