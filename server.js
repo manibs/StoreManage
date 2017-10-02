@@ -13,17 +13,17 @@ app.set('port', (process.env.PORT || 5000));
 app.set('src', (process.env.PARSE_MOUNT || './'));
 
 app.get('/index.html', function (req, res) {
-   res.sendFile( __dirname + "/Pages/" + "index.html" );
+    res.sendFile(__dirname + "/Pages/" + "index.html");
 })
 
 
-var Products = require( app.get('src') + 'Models/productModel');
-var productRouter = require( app.get('src')  + 'Services/products')(Products);
+var Products = require(app.get('src') + 'Models/productModel');
+var productRouter = require(app.get('src') + 'Services/Products')(Products);
 app.use('/api', productRouter);
 
 
-var Orders = require('./Models/orderModel');
-var orderRouter = require('./Services/orders')(Orders);
+var Orders = require(app.get('src') + 'Models/orderModel');
+var orderRouter = require(app.get('src') +'Services/Orders')(Orders);
 app.use('/api', orderRouter);
 
 
