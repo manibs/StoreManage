@@ -17,7 +17,6 @@ app.get('/index.html', function (req, res) {
 })
 
 
-
 var Products = require( app.get('src') + '/models/productModel');
 var productRouter = require( __dirname + '/Services/products')(Products);
 app.use('/api', productRouter);
