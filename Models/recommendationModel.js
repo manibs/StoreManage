@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var recomendationModel = new Schema({
+var recommendationModel = new Schema({
     Stock: {
         type: String
     },
@@ -23,4 +23,4 @@ var recomendationModel = new Schema({
 
 });
 
-module.exports = mongoose.model('Recomendation', recomendationModel);
+module.exports = mongoose.model('Recommendation', recommendationModel);
