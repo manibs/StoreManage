@@ -7,7 +7,8 @@ var bodyparser = require('body-parser');
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
-var db = mongoose.connect('mongodb://localhost:27001/medicineAPI');
+// var db = mongoose.connect('mongodb://localhost:27001/medicineAPI');
+var db = mongoose.connect('mongodb://admin:P@ssw0rd12!@cluster0-shard-00-00-3tc1a.mongodb.net:27017,cluster0-shard-00-01-3tc1a.mongodb.net:27017,cluster0-shard-00-02-3tc1a.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true');
 
 app.set('port', (process.env.PORT || 5000));
 
