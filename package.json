@@ -1,7 +1,7 @@
 {
-  "name": "medicinestore",
+  "name": "services",
   "version": "0.0.1",
-  "description": "Setup a medicine store",
+  "description": "Services",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
