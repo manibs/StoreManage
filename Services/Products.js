@@ -1,4 +1,6 @@
-var express = require('express');
+//import express from 'express';
+
+const express = require("express");
 
 var routes = function (Product) {
     var productRouter = express.Router();

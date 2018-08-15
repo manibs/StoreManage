@@ -1,8 +1,8 @@
-var express = require('express');
+const express = require("express");
 
 var router = function (Recommendation) {
 
-    var RecommendationRouter = express.router;
+    var RecommendationRouter = express.Router();
 
     RecommendationRouter.route('/recommendation')
         .post(function (req, res) {
@@ -13,7 +13,7 @@ var router = function (Recommendation) {
         .get(function (req, res) {
             var query = {};
             
-            Product.find(query, function (err, recommendations) {
+            Recommendation.find(query, function (err, recommendations) {
 
                 if (err) {
                     res.status(500).send(err);
