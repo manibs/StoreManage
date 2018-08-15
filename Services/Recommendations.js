@@ -3,7 +3,6 @@ const express = require("express");
 var routes = function (Recommendation) {
 
     var RecommendationRouter = express.Router();
-
     RecommendationRouter.route('/recommendations')
         .post(function (req, res) {
             var recommendation = new Recommendation(req.body);
