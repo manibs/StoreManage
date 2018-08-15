@@ -1,10 +1,10 @@
 const express = require("express");
 
-var router = function (Recommendation) {
+var routes = function (Recommendation) {
 
     var RecommendationRouter = express.Router();
 
-    RecommendationRouter.route('/recommendation')
+    RecommendationRouter.route('/recommendations')
         .post(function (req, res) {
             var recommendation = new Recommendation(req.body);
             recommendation.save();
@@ -12,7 +12,7 @@ var router = function (Recommendation) {
         })
         .get(function (req, res) {
             var query = {};
-            
+
             Recommendation.find(query, function (err, recommendations) {
 
                 if (err) {
@@ -25,6 +25,7 @@ var router = function (Recommendation) {
             });
 
         });
+        return RecommendationRouter;
 };
 
-module.exports = router;
+module.exports = routes;

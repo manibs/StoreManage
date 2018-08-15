@@ -30,9 +30,9 @@ var orderRouter = require(app.get('src') +'Services/Orders')(Orders);
 app.use('/api', orderRouter);
 
 
-// var Recommendation = require(app.get('src') + 'Models/recommendationModel');
-// var RecommendationRouter = require(app.get('src') +'Services/Recommendation')(Recommendation);
-//app.use('/api', recommendationRouter);
+ var Recommendations = require(app.get('src') + 'Models/recommendationModel');
+ var recommendationRouter = require(app.get('src') +'Services/Recommendation')(Recommendations);
+ app.use('/api', recommendationRouter);
 
 //CORS middleware
 app.use(function (req, res, next) {
